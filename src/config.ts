@@ -1,5 +1,5 @@
 export const config = {
   server: {
-    port: process.env.PORT || 3000,
+    HTTP_PORT: process.env.HTTP_PORT || 3000,
   },
 };
