@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 
-import { ReturnUserName } from "../../../../application/use-cases/return-user-name";
+import { ReturnAjvUserName } from "../../../../application/use-cases/return-ajv-user-name";
 import { User } from "../../../../domain/user.type";
 
-export class ValidationController {
+export class ValidationAjvController {
   async run(req: Request, res: Response) {
     const user: User = req.body;
-    const response = new ReturnUserName(user).exec();
+    const response = new ReturnAjvUserName(user).exec();
 
     if (response instanceof Error) {
       res.status(400).send(response.message);
